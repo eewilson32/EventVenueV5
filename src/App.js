@@ -11,23 +11,28 @@ import Footer from './components/Footer';
 
 export const HOME_PATH = '/EventVenueV5';
 function App() {
-  return (
-    <Router>
+    return (
+        <Router>
+            {/*<Router basename="/EventVenueV5"> 
       {/* Header will be rendered once for all routes */}
-      <Header />
-      <Routes>
-        <Route path={HOME_PATH} element={<Home />} />
-        <Route path="/event/:eventName/:eventDate" element={<Event />}/>
-        <Route path="/cart/:eventName/:eventDate" element={<Cart />}/>
-        <Route path="/tickets/:eventName/:eventDate" element={<Tickets />}/>
-        <Route path="/confirmation" element={<PurchaseConfirmation />} />
-      </Routes>
-      {/* Footer will be rendered once for all routes */}
-      <Footer />
+            <Header />
+            <Routes>
+                <Route path={HOME_PATH} element={<Home />} />
+                <Route path="/event/:eventName/:eventDate" element={<Event />} />
+                <Route path="/cart/:eventName/:eventDate" element={<Cart />} />
+                <Route path="/tickets/:eventName/:eventDate" element={<Tickets />} />
+                <Route path="/confirmation" element={<PurchaseConfirmation />} />
 
 
-    </Router>
-  );
+                {/* Pass category as a parameter */}
+                <Route path="/events/:category" element={<Home />} />
+            </Routes>
+            {/* Footer will be rendered once for all routes */}
+            <Footer />
+
+
+        </Router>
+    );
 }
 
 export default App;
